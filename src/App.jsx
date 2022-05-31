@@ -42,16 +42,17 @@ function App() {
           <div className="top">
             <div className="location">
               <p>{data.name}</p>
+              <p>{data.sys.country}</p>
             </div>
             <div className="temp">
               {data.main ? <h1>{data.main.temp.toFixed()}°C</h1> : null}
             </div>
             <div className="description">
-              <p>Clouds</p>
+              <p>{data.weather[0].main}</p>
             </div>
           </div>
 
-          {data.main != undefined &&
+          {data.main !== undefined &&
             <div className="bottom">
             <div className="feels">
               {data.main ? <p className="bold">{data.main.feels_like.toFixed()}°C</p> : null}
@@ -64,6 +65,10 @@ function App() {
             <div className="wind">
               {data.main ? <p className="bold">{data.wind.speed.toFixed()}Km/ph</p> : null}
               <p>Wind</p>
+            </div>
+            <div className="pressure">
+              {data.main ? <p className="bold">{data.main.pressure.toFixed()}Pa</p> : null}
+              <p>Pressure</p>
             </div>
           </div>}
         </div>
