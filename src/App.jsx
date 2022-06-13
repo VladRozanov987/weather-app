@@ -5,6 +5,7 @@ function App() {
 
   const [data, setData] = useState({});
   const [location, setLocation] = useState('');
+
   const url = `http://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=21a7756d6ce5b97b7c48bedff6387783`;
 
   const searchLanLon = (event) => {
@@ -30,6 +31,7 @@ function App() {
 
   return (
     <div className="app">
+
       <div className="search">
         <input
           value={location}
@@ -38,17 +40,18 @@ function App() {
           placeholder="Enter location"
           type="text" />
       </div>
+
         <div className="container">
           <div className="top">
             <div className="location">
               <p>{data.name}</p>
-              <p>{data.sys.country}</p>
+              {data.main ? <p>{data.sys.country} </p> : null}
             </div>
             <div className="temp">
               {data.main ? <h1>{data.main.temp.toFixed()}°C</h1> : null}
             </div>
             <div className="description">
-              <p>{data.weather[0].main}</p>
+            {data.main ? <p>{data.weather[0].main}</p> : null}
             </div>
           </div>
 
