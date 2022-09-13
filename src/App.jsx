@@ -10,9 +10,9 @@ function App() {
   const searchLanLon = (event) => {
     if (event.key === "Enter") {
       axios.get(url).then((responce) => {
-        const Lat = responce.data[0].lat;
-        const Lon = responce.data[0].lon;
-        const urlLatLon = `https://api.openweathermap.org/data/2.5/weather?lat=${Lat}&lon=${Lon}&units=metric&exclude=daily&appid=${process.env.REACT_APP_WEATHER_APP}`;
+        const lat = responce.data[0].lat;
+        const lon = responce.data[0].lon;
+        const urlLatLon = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&exclude=daily&appid=${process.env.REACT_APP_WEATHER_APP}`;
 
         searchCity(urlLatLon);
       });
