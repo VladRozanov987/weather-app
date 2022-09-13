@@ -54,19 +54,19 @@ function App() {
             </div>
 
             <div className="bottom">
-              <div className="feels">
+              <div className="info-line">
                 <p className="bold">{data.main.feels_like.toFixed()}°C</p>
                 <p>Feels like</p>
               </div>
-              <div className="humidity">
+              <div className="info-line">
                 <p className="bold">{data.main.humidity.toFixed()}%</p>
                 <p>Humidity</p>
               </div>
-              <div className="wind">
+              <div className="info-line">
                 <p className="bold">{data.wind.speed.toFixed()}Km/ph</p>
                 <p>Wind</p>
               </div>
-              <div className="pressure">
+              <div className="info-line">
                 <p className="bold">{data.main.pressure.toFixed()}Pa</p>
                 <p>Pressure</p>
               </div>
